@@ -28,6 +28,9 @@ jobs:
     - name: Replace Secret Key in file
       run: sed -i 's/my-secret-key/${{ secrets.TF_SECRET_KEY }}/g' basic_infra/main.tf
 
+    - name: cat
+      run: cat basic_infra/main.tf
+
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       run: terraform init ./basic_infra
