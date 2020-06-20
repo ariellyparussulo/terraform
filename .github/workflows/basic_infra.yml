@@ -27,10 +27,10 @@ jobs:
 
     # replace credentials in file
     - name: Replace Access Key in file
-      run: sed 's/my-access-key/${{ secrets.TF_ACCESS_KEY }}'
+      run: sed 's/my-access-key/${{ secrets.TF_ACCESS_KEY }}' main.tf
 
     - name: Replace Secret Key in file
-      run: sed 's/my-secret-key/${{ secrets.TF_SECRET_KEY }}'
+      run: sed 's/my-secret-key/${{ secrets.TF_SECRET_KEY }}' main.tf
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
