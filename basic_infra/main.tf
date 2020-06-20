@@ -3,6 +3,14 @@ provider "aws" {
   profile = "default"
 }
 
+terraform {
+  backend "s3" {
+    bucket = "arielly-terraform"
+    key = "basic_infra"
+    region = "us-east-1"
+  }
+}
+
 module "vpc" {
   source = "./modules/vpc"
   vpc_block = "10.0.0.0/16"
