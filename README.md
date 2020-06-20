@@ -1,13 +1,6 @@
 # Terraform
-Small project to create some reference terraform scripts. 
+Small project to create some reference terraform scripts.
 
 ## Script
-
-- **create-public-subnet**: creates a small Subnet config. It uses the following resources:
-	- vpc
-	- subnet
-	- route table
-	- seurity group
-	- instances
-	- eip
-
+### basic_infra
+Creates a basic struct to provide a vpc and instances to use it. It also provided the access to the instance through SSM Session Manager.
