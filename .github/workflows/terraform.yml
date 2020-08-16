@@ -22,7 +22,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: access terraform project
-      run: pwd | basic_infra
+      run: pwd | cd basic_infra
 
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
