@@ -1,11 +1,9 @@
 provider "aws" {
   region  = "us-east-1"
-  profile = "arielly"
 }
 
 terraform {
   backend "s3" {
-    profile = "arielly"
     bucket = "arielly-terraform"
     key = "basic_infra"
     region = "us-east-1"
@@ -23,8 +21,10 @@ module "vpc" {
 
 module "instances" {
   source = "./modules/instances"
-  ami = "ami-09d95fab7fff3776c"
-  instance_type = "t2.micro"
-  subnet_id = module.vpc.private_subnet
+  key_name = "default"
+  ami = "ami-0d57c0143330e1fa7"
+  instance_type = "t2.small"
+  subnet_id = module.vpc.public_subnet
   nat_security_group = module.vpc.nat_security_group
+  vpc_id = module.vpc.vpc_id
 }
